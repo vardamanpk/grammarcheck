@@ -5,9 +5,63 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 30px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.big{
+  font-size: 2em;
+}
+
+.blue{
+  color: blue;
+}
+.error{
+  text-decoration: underline red;
+}
+
+/* Style for the tooltip container */
+.tooltip {
+  position: relative;
+  color: blue;
+}
+
+/* Style for the tooltip text */
+.tooltip::before {
+  content: attr(data-tooltip);
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  transition: opacity 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+button{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
